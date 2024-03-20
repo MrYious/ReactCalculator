@@ -2,6 +2,7 @@ import { Text, View } from 'react-native';
 
 import InputButton from './components/InputButton';
 import Style from './Style';
+import { useState } from 'react';
 
 const inputButtons = [
   [1, 2, 3, '/'],
@@ -11,6 +12,8 @@ const inputButtons = [
 ];
 
 const ReactCalculator = () => {
+
+  const [inputValue, setInputValue] = useState(0);
 
   const renderInputButtons = () => {
     let views = [];
@@ -23,7 +26,11 @@ const ReactCalculator = () => {
         let input = row[i];
 
         inputRow.push(
-          <InputButton value={input} key={r + "-" + i} />
+          <InputButton
+            value={input}
+            onPress={()=>{onInputButtonPressed(input)}}
+            key={r + "-" + i}
+          />
         );
       }
 
@@ -33,9 +40,22 @@ const ReactCalculator = () => {
     return views;
   }
 
+  const onInputButtonPressed = (input) => {
+    switch (typeof input) {
+      case 'number':
+        return handleNumberInput(input);
+    }
+  }
+
+  const handleNumberInput = (num) => {
+    setInputValue((prev) => (prev * 10) + num);
+  }
+
   return (
     <View style={Style.rootContainer}>
-      <View style={Style.displayContainer}></View>
+      <View style={Style.displayContainer}>
+        <Text style={Style.displayText}>{inputValue}</Text>
+      </View>
       <View style={Style.inputContainer}>
         {renderInputButtons()}
       </View>

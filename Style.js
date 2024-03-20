@@ -7,7 +7,16 @@ const Style = StyleSheet.create({
 
     displayContainer: {
         flex: 2,
-        backgroundColor: '#193441'
+        backgroundColor: '#193441',
+        justifyContent: "center",
+    },
+
+    displayText: {
+        color: 'white',
+        fontSize: 38,
+        fontWeight: 'bold',
+        textAlign: 'right',
+        padding: 20
     },
 
     inputContainer: {
