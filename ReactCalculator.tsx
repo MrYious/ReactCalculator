@@ -1,15 +1,13 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { Text, View } from 'react-native';
+
+import Style from './Style';
 
 const ReactCalculator = () => {
 
   return (
-    <View style={{flex: 1}}>
-      <View style={{flex: 2, backgroundColor: '#193441'}}></View>
-      <View style={{flex: 8, backgroundColor: '#3E606F'}}></View>
+    <View style={Style.rootContainer}>
+      <View style={Style.displayContainer}></View>
+      <View style={Style.inputContainer}></View>
     </View>
   );
 }
