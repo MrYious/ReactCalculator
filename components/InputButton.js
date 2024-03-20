@@ -1,12 +1,14 @@
-import { Text, View } from 'react-native';
+import { Text, TouchableHighlight } from 'react-native';
 
 import Style from '../Style';
 
-const InputButton = ({value}) => {
+const InputButton = ({value, onPress}) => {
     return (
-        <View style={Style.inputButton}>
+        <TouchableHighlight style={Style.inputButton}
+                            underlayColor="#193441"
+                            onPress={onPress}>
             <Text style={Style.inputButtonText}>{value}</Text>
-        </View>
+        </TouchableHighlight>
     )
 }
 
