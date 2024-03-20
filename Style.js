@@ -15,6 +15,11 @@ const Style = StyleSheet.create({
         backgroundColor: '#3E606F'
     },
 
+    inputRow: {
+        flex: 1,
+        flexDirection: 'row'
+    },
+
     inputButton: {
         flex: 1,
         alignItems: 'center',
@@ -28,8 +33,6 @@ const Style = StyleSheet.create({
         fontWeight: 'bold',
         color: 'white'
     },
-
-    
 });
 
 export default Style;
