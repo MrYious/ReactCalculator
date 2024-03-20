@@ -5,10 +5,12 @@ import {
 
 import Style from '../Style';
 
-export const InputButton = () => {
+const InputButton = ({value}) => {
     return (
         <View style={Style.inputButton}>
-            <Text style={Style.inputButtonText}>{this.props.value}</Text>
+            <Text style={Style.inputButtonText}>{value}</Text>
         </View>
     )
 }
+
+export default InputButton;
