@@ -66,6 +66,14 @@ const ReactCalculator = () => {
         setPreviousInputValue(inputValue);
         setInputValue(0);
         break;
+      case '=':
+        if (!selectedSymbol) {
+          return;
+        }
+        setPreviousInputValue(0);
+        setInputValue(eval(previousInputValue + selectedSymbol + inputValue));
+        setSelectedSymbol(null);
+        break;
    }
   }
 
