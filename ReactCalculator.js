@@ -5,6 +5,7 @@ import Style from './Style';
 import { useState } from 'react';
 
 const inputButtons = [
+  ['', '', 'C', 'CE'],
   [1, 2, 3, '/'],
   [4, 5, 6, '*'],
   [7, 8, 9, '-'],
@@ -72,6 +73,14 @@ const ReactCalculator = () => {
         }
         setPreviousInputValue(0);
         setInputValue(eval(previousInputValue + selectedSymbol + inputValue));
+        setSelectedSymbol(null);
+        break;
+      case 'C':
+        setInputValue((prev) => (prev - (prev % 10)) / 10);
+        break;
+      case 'CE':
+        setPreviousInputValue(0);
+        setInputValue(0);
         setSelectedSymbol(null);
         break;
    }
