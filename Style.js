@@ -16,7 +16,14 @@ const Style = StyleSheet.create({
         fontSize: 38,
         fontWeight: 'bold',
         textAlign: 'right',
-        padding: 20
+        paddingHorizontal: 20,
+    },
+
+    displayErrorMessage: {
+        color: '#ff8178',
+        fontSize: 28,
+        textAlign: 'right',
+        paddingHorizontal: 20
     },
 
     inputContainer: {
